@@ -1,43 +1,22 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 int main()
 {
+    float a;
+    double z;
 
-    float n, k, dx, y, x;
+    cout << "Введите значение a: ";
+    cin >> a;
 
-    cout << "Введите значение шага: ";
-    cin >> dx;
-    cout << "Введите начало цикла: ";
-    cin >> n;
-    cout << "Введите конец цикла: ";
-    cin >> k;
+    z = ((a + 2) / pow(2 * a, 0.5) - a / (pow(2 * a, 0.5) + 2) + 2 / (a - pow(2 * a, 0.5))) * ((pow(a, 0.5) - pow(2, 0.5)) / (a + 2));
 
-    x = n;
-    cout << " X    Y " << endl << "--------" << endl;
-    while (x <= k)
-    {
-        if(x<=-2){
-            y=-x-2;
-        }
-        else if(x<=0){
-            y=pow(1-pow(x+1,2),0.5);
-        }
-        else if(x<=4){
-            y=0-pow(4-pow(x-2,2),0.5);
-        }
-        else if(x<=6){
-            y=0-0.5*x+2;
-        }
-        else{
-            y=-1;
-        }
+    cout << "Результат вычисления: Z1 = " << z << " a = " << a << "\n";
 
-        cout << x << "    " << y << endl;
-        x += dx;
-    }
+    z = 1 / (pow(a, 0.5) + pow(2, 0.5));
 
+    cout << "Результат вычисления: Z2 = " << z << " x = " << a;
 
     return 0;
 }
